@@ -9,16 +9,15 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <main className="main">
-        <ItemListContainer greeting="¡Bienvenido a CodeBook Emporium!" />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="*" element={<div>404: Not Found</div>} />
+        </Routes>
       </main>
-      <Routes>
-        <Route exact path="/" component={ItemListContainer} />
-        <Route exact path="/category/:id" component={ItemListContainer} />
-        <Route exact path="/item/:id" component={ItemDetailContainer} />
-      </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-

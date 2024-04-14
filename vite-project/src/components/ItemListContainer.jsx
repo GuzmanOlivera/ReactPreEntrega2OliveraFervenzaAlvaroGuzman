@@ -10,15 +10,15 @@ function ItemListContainer() {
   const params = useParams()
 
   useEffect(() => {
-    const apiKey = 'AIzaSyDYbYaaKtwY8LIblmOQvF-W0Plb4geCIkg'; 
-    const searchTerm = params.categoria || 'computer science'; 
+    const apiKey = 'AIzaSyDYbYaaKtwY8LIblmOQvF-W0Plb4geCIkg';
+    const searchTerm = params.categoria || 'computer science'; // Default to computer science
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${apiKey}`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        setBooks(data.items || []); // Handle potential empty response
+        setBooks(data.items || []);
       })
       .catch(error => {
         console.error('Error fetching books:', error);
@@ -29,7 +29,7 @@ function ItemListContainer() {
   return (
     <>
       <Title>Libros {params.categoria ? `- ${params.categoria}` : ''}</Title>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-8 gap-4">
         {books.map((book) => (
           <ItemCard key={book.id} book={book} />
         ))}

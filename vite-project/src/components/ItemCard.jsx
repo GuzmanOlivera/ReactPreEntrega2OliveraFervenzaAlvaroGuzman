@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
 
 function ItemCard({ book }) {
-    const { volumeInfo, id } = book; // Se añade 'id' aquí
+    const { volumeInfo } = book; 
     const { title, authors, description, imageLinks } = volumeInfo;
 
     const image = imageLinks?.thumbnail;
     const name = title;
+    const id = book.id; 
 
     return (
         <div className="p-4 transition rounded-md shadow-md user-card hover:scale-105 group bg-slate-300">
-            <div className="overflow-hidden aspect-video">
+            <div className="overflow-hidden aspect-w-3 aspect-h-4">
                 <img
-                    className="w-full transition-all duration-500 rounded-md grayscale group-hover:grayscale-0 group-hover:scale-150"
+                    className="object-cover w-full h-full transition-all duration-500 rounded-md grayscale group-hover:grayscale-0 group-hover:scale-150"
                     src={image}
                     alt="card image"
+                    style={{ aspectRatio: "3/4" }}
                 />
             </div>
             <h2 className="my-2 font-bold">{name}</h2>
-            <Link to={`/category/${id}`}>ver mas</Link>
+            <Link to={`/item/${id}`}>Ver más</Link>
         </div>
     );
 }

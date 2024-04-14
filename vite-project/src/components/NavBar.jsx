@@ -10,7 +10,7 @@ const NavBar = () => {
     };
 
     return (
-        <header className="nav-bar">
+        <header className="nav-bar z-50">
             <h1 id="title" className="mainTitle">CodeBook Emporium</h1>
             <a href="/" className="logo-container">
                 <img src={logo} alt="Logo" className="logo-img" />
@@ -25,15 +25,15 @@ const NavBar = () => {
                 {/* Mobile menu */}
                 <MenuOutlined className="mobile-menu md:hidden text-gray-700 hover:text-gray-900" onClick={toggleMobileMenu} />
                 {isMobileMenuOpen && (
-                    <div className="reset mobile-menu flex flex-col mt-12 bg-white border border-gray-200 rounded-md">
-                        <a href="#" className="menu-link">Todos los libros</a>
-                        <a href="#" className="menu-link">Programación</a>
-                        <a href="#" className="menu-link">Bases de datos</a>
+                    <div className="md:hidden absolute top-16  bg-black rounded-md border border-gray-200 shadow-md z-50">
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Todos los libros</a>
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Programación</a>
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Bases de datos</a>
                     </div>
                 )}
 
             </nav>
-            <div className="md:hidden">
+            <div className="z-50">
                 <CartWidget />
             </div>
         </header>
