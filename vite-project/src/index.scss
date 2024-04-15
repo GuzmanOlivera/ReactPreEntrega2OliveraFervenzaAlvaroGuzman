@@ -60,7 +60,7 @@ h3 {
 /* Logo */
 .nav-bar img,
 .logo-img {
-  max-width: 140px;
+  max-width: 200px;
   height: auto;
   transition: filter 0.3s ease;
 
@@ -94,13 +94,21 @@ h3 {
     }
   }
 
-
-  .mobile-menu a {
-    margin-top:1rem;
+  .mobile-menu a,
+  .mobile-menu-link {
+    margin-top: 1rem;
     display: block;
     margin-bottom: 10px;
-  }
+    text-align: center;
+    padding: 6px;
 
+    &:hover {
+      color: #fbbf24;
+      background-color: rgba(251, 191, 36, 0.1);
+      border-color: #fbbf24;
+
+    }
+  }
 
   .mobile-menu {
     display: block;
@@ -110,7 +118,7 @@ h3 {
     cursor: pointer;
     transition: transform 0.3s ease;
 
-   
+
     &:hover {
       transform: scale(1.1);
     }
@@ -157,5 +165,37 @@ h3 {
 
   .mobile-menu {
     display: none;
+  }
+}
+
+/* Footer */
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  footer h2 {
+    font-size: 1.5rem;
   }
 }

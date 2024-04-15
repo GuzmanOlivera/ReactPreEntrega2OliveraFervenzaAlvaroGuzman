@@ -1,6 +1,9 @@
 import { MenuOutlined } from '@ant-design/icons';
 import CartWidget from './CartWidget';
-import logo from '../img/logo.jpg'; import { useState } from 'react';
+import logo from '../img/logo.jpg';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 const NavBar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,24 +14,24 @@ const NavBar = () => {
 
     return (
         <header className="nav-bar z-50">
-            <h1 id="title" className="mainTitle">CodeBook Emporium</h1>
+<h1 id="title" className="text-4xl font-bold">CodeBook Emporium</h1>
             <a href="/" className="logo-container">
                 <img src={logo} alt="Logo" className="logo-img" />
             </a>
             <nav className="nav-menu flex items-center">
                 {/* Desktop Menu */}
                 <div className="desktop-menu hidden">
-                    <a href="#">Todos los libros</a>
-                    <a href="#">Programación</a>
-                    <a href="#">Bases de datos</a>
+                    <Link to="/">Todos los libros</Link>
+                    <Link to="/category/programming">Programación</Link>
+                    <Link to="/category/database">Bases de datos</Link>
                 </div>
                 {/* Mobile menu */}
                 <MenuOutlined className="mobile-menu md:hidden text-gray-700 hover:text-gray-900" onClick={toggleMobileMenu} />
                 {isMobileMenuOpen && (
                     <div className="md:hidden absolute top-16  bg-black rounded-md border border-gray-200 shadow-md z-50">
-                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Todos los libros</a>
-                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Programación</a>
-                        <a href="#" className="block py-2 px-4 hover:bg-gray-800 transition-colors">Bases de datos</a>
+                        <Link className="mobile-menu-link" to="/">Todos los libros</Link>
+                        <Link className="mobile-menu-link" to="/category/programming">Programación</Link>
+                        <Link className="mobile-menu-link" to="/category/database">Bases de datos</Link>
                     </div>
                 )}
 

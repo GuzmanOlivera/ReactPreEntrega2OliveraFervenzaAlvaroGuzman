@@ -2,16 +2,20 @@ import { Typography } from 'antd';
 import { useEffect, useState } from "react"
 import ItemCard from "./ItemCard"
 import { useParams } from "react-router-dom"
+import config from '../config';
+
 
 const { Title } = Typography;
 
 function ItemListContainer() {
   const [books, setBooks] = useState([])
   const params = useParams()
-
+  
   useEffect(() => {
-    const apiKey = 'AIzaSyDYbYaaKtwY8LIblmOQvF-W0Plb4geCIkg';
-    const searchTerm = params.categoria || 'computer science'; // Default to computer science
+  
+    const apiKey = config.apiKey;
+
+    const searchTerm = params.category || 'programming|database|computers|data';
 
     const url = `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=${apiKey}`;
 
@@ -24,12 +28,12 @@ function ItemListContainer() {
         console.error('Error fetching books:', error);
       });
 
-  }, [params.categoria]);
+  }, [params.category]);
 
   return (
     <>
-      <Title>Libros {params.categoria ? `- ${params.categoria}` : ''}</Title>
-      <div className="grid grid-cols-1 md:grid-cols-8 gap-4">
+      <Title>Libros de informática {params.category ? `- Filtro: "${params.category}"` : ''}</Title>
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
         {books.map((book) => (
           <ItemCard key={book.id} book={book} />
         ))}
