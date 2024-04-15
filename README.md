@@ -4,7 +4,7 @@ Este proyecto React utiliza Vite como bundler y necesita una API key de Google p
 
 ## Uso de la API Key de Google
 
-Para que este proyecto funcione correctamente, necesitas obtener una API key de Google Maps (o cualquier otro servicio de Google que necesites) y configurarla en un archivo `config.js`. Aquí está cómo hacerlo:
+Para que este proyecto funcione correctamente, necesitas obtener una API key de Google Books y configurarla en un archivo `config.js`. Aquí está cómo hacerlo:
 
 1. **Obtener una API Key de Google**:
    - Visita la [consola de desarrolladores de Google](https://console.developers.google.com/).
