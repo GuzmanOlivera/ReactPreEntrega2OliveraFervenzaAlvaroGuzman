@@ -13,7 +13,7 @@ Para que este proyecto funcione correctamente, necesitas obtener una API key de 
    - Genera una nueva API key en la sección de credenciales.
 
 2. **Crear el archivo `config.js`**:
-   - Crea un nuevo archivo llamado `config.js` dentro de la carpeta `src`.
+   - Crea un nuevo archivo llamado `config.js` dentro de la carpeta `src`, la cual ya está creada dentro de la carpeta `vite-project`.
    - Copia y pega el siguiente código en `config.js`:
 
    ```javascript
