@@ -13,7 +13,7 @@ Para que este proyecto funcione correctamente, necesitas obtener una API key de 
    - Genera una nueva API key en la sección de credenciales.
 
 2. **Crear el archivo `config.js`**:
-   - En la raíz del proyecto, crea un nuevo archivo llamado `config.js` dentro de la carpeta `src`.
+   - Crea un nuevo archivo llamado `config.js` dentro de la carpeta `src`.
    - Copia y pega el siguiente código en `config.js`:
 
    ```javascript
