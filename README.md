@@ -2,6 +2,8 @@
 
 Este proyecto React utiliza Vite como bundler y necesita una API key de Google para funcionar correctamente.
 
+![codebook-gif](./codebook.gif)
+
 ## Uso de la API Key de Google
 
 Para que este proyecto funcione correctamente, necesitas obtener una API key de Google Books y configurarla en un archivo `config.js`. Aquí está cómo hacerlo:
